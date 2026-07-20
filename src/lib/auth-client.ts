@@ -1,12 +1,9 @@
 import { createAuthClient } from "better-auth/react";
 
-// Points to the backend where Better Auth is mounted at /api/auth/*
 const authClient = createAuthClient({
-  baseURL:
-    process.env.NEXT_PUBLIC_API_URL?.replace("/api", "") ||
-    "http://localhost:5000",
+  baseURL: process.env.NEXT_PUBLIC_BETTER_AUTH_URL || "http://localhost:3000",
   fetchOptions: {
-    credentials: "include", // ✅ Send cookies with every request
+    credentials: "include",
   },
 });
 
